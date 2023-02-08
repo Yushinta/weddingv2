@@ -148,15 +148,15 @@
 			<div class="audio-play">
 				<div data-video="QZng89VxKWg" data-autoplay="0" data-loop="1" id="youtube-audio1"></div>
 			</div>
-			<ul class="right-sidebar">
+			<ul class="right-sidebar btn-gold2">
 				<!--gallery-->
 				<li onclick="scrollToElement('fh5co-gallery')" style="background-image: url(images/gallery.png)"></li>
 				<!--chat-->
-				<li onclick="scrollToElement('fh5co-testimonial')" style="background-image: url(images/gift.png)"></li>
+				<li onclick="scrollToElement('fh5co-gift')" style="background-image: url(images/gift.png)"></li>
 			</ul>
 			<!--calendar-->
 			<div onclick="scrollToElement('fh5co-event')" class="option-btn open"></div>
-			<ul class="left-sidebar">
+			<ul class="left-sidebar btn-gold2">
 				<!--countdown-->
 				<li onclick="scrollToElement('fh5co-header')" style="background-image: url(images/timer.png)"></li>
 				<!--couple-->
@@ -371,10 +371,10 @@
 							</ul>
 						</div>
 					</section>
+					<img class="ornament-gallery" src="images/background/ornament-gflower.png">
+					<img class="ornament-gallery-bottom" src="images/background/ornament-gflower.png" style="rotate: 180deg">
 				</div>
 			</div>
-			<img class="ornament-gallery" src="images/background/ornament-gflower.png">
-			<img class="ornament-gallery-bottom" src="images/background/ornament-gflower.png" style="rotate: 180deg">
 			<!-- <div class="row row-bottom-padded-md animate-box">
 				<div class="col-md-12" style="position: absolute; right: 0; left: 0;">
 					<div id="inline-gallery-container" class="inline-gallery-container" style="position: relative; height: 500px"></div>
@@ -579,6 +579,37 @@
 					<span style="color: #bf9b73">Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.</span>
 				</div>
 			</div>
+			<div class="row text-center">
+				<?php
+				$servername = "localhost";
+				$username = "root";
+				$password = "";
+				$database = "undangan";
+
+				// Create connection
+				$conn = new mysqli($servername, $username, $password, $database);
+
+				// Check connection
+				if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+				echo "Koneksi Gagal";
+				}
+				echo "Connected successfully <br>";
+
+				$queryGetData = "SELECT * FROM ucapan";
+				$resultData = $conn->query($queryGetData);
+
+				if ($resultData->num_rows > 0) {
+					// output data of each row
+					while($row = $resultData->fetch_assoc()) {
+					  echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+					}
+				  } else {
+					echo "0 results";
+				  }
+				  $conn->close();
+				?>
+			</div>
 			<!--<div class="row">
                 <div class="col-md-12 animate-box">
                     <div class="wrap-testimony">
@@ -666,6 +697,42 @@
 			</div>
 		</div>
 	</div>-->
+
+	<div id="fh5co-gift" class="fh5co-bg" style="background-image:url('images/background/repeat-background/black-bg.jpg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2>Kirim Gift</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="col-md-6 col-sm-6 text-center">
+						<div class="gift-wrap animate-box">
+							<h3 style="font-family: 'Oswald', Arial, serif;">REKENING</h3>
+							<img src="images/bri.png" width="50%" alt="">
+		
+							<p style="font-family: 'Courgette', Arial, serif">No Rekening : 00000000000000000 Atas Nama : Yushinta Saputri</p>
+
+							<img src="images/bca.png" width="50%" alt="">
+		
+							<p style="font-family: 'Courgette', Arial, serif">No Rekening : 00000000000000000 Atas Nama : Mukhamad Maftuh Sangiba</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 text-center">
+						<div class="gift-wrap animate-box">
+							<h3 style="font-family: 'Oswald', Arial, serif;">QRIS</h3>
+							<img src="images/qris-erickunto.jpg" alt="" srcset="" style="width: inherit;">
+						</div>
+					</div>
+					<!--<div class="col-md-12 animate-box" style="margin-top: 15px;">
+                        <iframe width="100%" height="400" style="border: 0; border-radius: 5px;" frameborder="0" scrolling="no" src="https://calendar.google.com/calendar/embed?src=p68227rf4u2tqb5orkf10m3u44%40group.calendar.google.com&ctz=Asia%2FJakarta"></iframe>
+                        &lt;!&ndash;<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.658582822158!2d95.24281301476557!3d5.468657396034234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30403b4252a49dbd%3A0xa20ea2ca9164dce9!2sLhoknga%20Riverside!5e0!3m2!1sen!2sid!4v1627721471121!5m2!1sen!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>&ndash;&gt;
+                    </div>-->
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<footer id="fh5co-footer" role="contentinfo" style="background: url('images/background/repeat-background/black-bg.jpg'); background-repeat:repeat ">
 		<div class="container">
