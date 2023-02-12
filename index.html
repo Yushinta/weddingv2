@@ -569,7 +569,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-testimonial" style="background: url('images/background/repeat-background/black-stuff.jpg'); background-repeat:repeat; border-top: 1px solid #f2f2f2">
+	<!-- <div id="fh5co-testimonial" style="background: url('images/background/repeat-background/black-stuff.jpg'); background-repeat:repeat; border-top: 1px solid #f2f2f2">
 		<img height="400" class="flower-bukutamu-right" style="right: 0;top: 0;position: absolute;" src="images/background/flowers/top-right-3.svg">
 		<img height="400" class="flower-bukutamu-left" style="position: absolute; left: 0; bottom: 0" src="images/background/flowers/bottom-left-3.svg">
 		<div class="container">
@@ -579,38 +579,8 @@
 					<span style="color: #bf9b73">Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.</span>
 				</div>
 			</div>
-			<div class="row text-center animate-box">
-				<?php
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$database = "undangan";
-
-				// Create connection
-				$conn = new mysqli($servername, $username, $password, $database);
-
-				// Check connection
-				if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-				echo "Koneksi Gagal";
-				}
-				echo "Connected successfully <br>";
-
-				$queryGetData = "SELECT * FROM ucapan";
-				$resultData = $conn->query($queryGetData);
-
-				if ($resultData->num_rows > 0) {
-					// output data of each row
-					while($row = $resultData->fetch_assoc()) {
-					  echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-					}
-				  } else {
-					echo "0 results";
-				  }
-				  $conn->close();
-				?>
-			</div>
-			<!--<div class="row">
+			
+			<div class="row">
                 <div class="col-md-12 animate-box">
                     <div class="wrap-testimony">
                         <div class="owl-carousel-fullwidth">
@@ -650,7 +620,7 @@
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>
 
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2">
@@ -663,36 +633,69 @@
 				<i style="font-size: 15px">Note : Hanya bisa diisi jika mempunyai akun github. Jika belum ada silahkan daftar terlebih dahulu</i>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/background/repeat-background/black-bg.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Are You Attending?</h2>
-					<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+					<h2 style="color: #dea15b;">Best Wishes</h2>
+					<p style="color: #bf9b73;">Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
 				</div>
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
 					<form class="form-inline">
-						<div class="col-md-4 col-sm-4 col-lg-2">
+						<div class="col-lg-12 col-md-4 col-sm-4">
 							<div class="form-group">
-								<label for="name" class="sr-only">Name</label>
-								<input type="name" class="form-control" id="name" placeholder="Name">
+								<label for="name" class="sr-only">Nama</label>
+								<input type="text" class="form-control" id="name" placeholder="Nama">
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4">
+						<div class="col-lg-12 col-md-4 col-sm-4">
 							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email">
+								<label for="email" class="sr-only">Ucapan & Do'a Terbaik</label>
+								<input type="text" class="form-control" id="email" placeholder="Ucapan & Do'a Terbaik">
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
+						<div class="col-lg-12 col-md-4 col-sm-4">
+							<button type="submit" class="btn btn-gold btn-block" style="font-family: 'Courgette', Arial, serif"> <span style="text-shadow: 2px 2px 3px black;">Kirim</span></button>
 						</div>
 					</form>
+				</div>
+			</div>
+			<div class="row animate-box">
+				<div class="row text-center animate-box">
+					<?php
+					$servername = "localhost";
+					$username = "root";
+					$password = "";
+					$database = "undangan";
+	
+					// Create connection
+					$conn = new mysqli($servername, $username, $password, $database);
+	
+					// Check connection
+					if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+					echo "Koneksi Gagal";
+					}
+					echo "Connected successfully <br>";
+	
+					$queryGetData = "SELECT * FROM ucapan";
+					$resultData = $conn->query($queryGetData);
+	
+					if ($resultData->num_rows > 0) {
+						// output data of each row
+						while($row = $resultData->fetch_assoc()) {
+						  echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+						}
+					  } else {
+						echo "0 results";
+					  }
+					  $conn->close();
+					?>
 				</div>
 			</div>
 		</div>
@@ -827,7 +830,7 @@
 
 	$('#open-invitation').click(function (){
 		$('#overlay').addClass('hide-overlay');
-		playAudio1();
+		// playAudio1();
 		/*yang bagian floating button ada animasinya tapi karena ketutup dulu sama overlay jadinya gak nampak*/
 		/*pengen pas di klik buka undangan baru jalan animasinya*/
 		/*var c = document.getElementsByClassName('right-sidebar');
