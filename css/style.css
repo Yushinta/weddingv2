@@ -2326,7 +2326,7 @@ fadeIn {  from {
 /*Mobile*/
 @media (max-width:767px) {
   .flower-1 {
-    height: 1.5%;
+    height: 1%;
   }
   .flower-2-left{
     left: -20px;
