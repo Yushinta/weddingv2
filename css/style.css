@@ -539,8 +539,22 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: normal;
-  color: #0298d4;
+  color: #dea15b;
   font-family: "Satisfy", Arial, serif;
+}
+.sitamu {
+  /* color: #000; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.168);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  max-width: 50rem;
+  font-weight: bold;
 }
 @media screen and (max-width: 480px) {
   #overlay .content h1 {
