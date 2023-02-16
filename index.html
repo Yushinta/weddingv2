@@ -74,7 +74,7 @@
 		<div id="floating-button" class="float">
 			<div class="control-center open">
 				<div class="audio-play">
-					<div data-video="QZng89VxKWg" data-autoplay="0" data-loop="1" id="youtube-audio1"></div>
+					<div data-video="tX73H2FRcK8" data-autoplay="0" data-loop="1" id="youtube-audio1"></div>
 				</div>
 				<ul class="right-sidebar btn-gold2">
 					<!--gallery-->
@@ -208,7 +208,7 @@
 									<span>Minggu</span>
 									<span class="tanggal">07 Mei 2023</span>
 								</div>
-								<p style="font-family: 'Courgette', Arial, serif">Alamat : Masjid Baiturrahim, Pasang, Pagergunung, Kec. Pringsurat, Kabupaten Temanggung, Jawa Tengah 56272, Indonesia</p>
+								<p style="font-family: 'Courgette', Arial, serif">Alamat : Masjid Baiturrahim, Pasang, Pagergunung, Kec. Pringsurat, Kabupaten Temanggung, Jawa Tengah, Indonesia</p>
 
 								<a href="https://goo.gl/maps/pKqm3LbQEMzqyz1h8" target="_blank" class="btn btn-gold">Penunjuk Lokasi <i class="icon-map2"></i></a>
 							</div>
@@ -780,6 +780,18 @@
 		var name = url[0].replaceAll('-', ' ')
 		var tamu = document.querySelector("#tamu");
 		console.log(tamu.innerHTML = name);
+	</script>
+	<script>
+		scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    	scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+		
+		function enableScroll() {
+			window.onscroll = function() {};
+		}
 	</script>
 </body>
 
