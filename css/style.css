@@ -512,14 +512,32 @@ h1, h2, h3, h4, h5, h6, figure {
 #overlay {
   background: #ffffff;
   background-image: url("../images/overlay.JPG");
-  background-size: cover;
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2000;
+  background-position: center;
+  background-size: 150%;
+  background-position-y: 25%;
 }
+
+@media screen and (max-width: 480px) {
+  #overlay {
+    background: #ffffff;
+    background-image: url("../images/overlay.JPG");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-position: center;
+  }
+}
+
 #overlay .content {
   background: rgba(0, 0, 0, 0.7);
   position: relative;
@@ -2375,12 +2393,12 @@ fadeIn {  from {
   }
   .ornament-gallery{
     height: 17%;
-    top: 24%;
+    top: 17%;
     left: 0;
   }
   .ornament-gallery-bottom{
     height: 17%;
-    bottom: 9%;
+    bottom: 6%;
     right: 0;
   }
 }
